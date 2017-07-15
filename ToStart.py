@@ -10,6 +10,7 @@ import pandas as pd
 
 split_ratio = 0.8
 
+print('************** M O B I K E  C U P  T E A M XXXXXXXXXXX ***************\n')
 print('Importing data...\n')
 # PATH NEED TO BE MODIFIED
 dataset = pd.read_csv('data/train.csv', header=0, sep=',')
@@ -30,7 +31,7 @@ data_test = dataset[int(N*split_ratio):]
 print('Training...\n')
 user_loc = {i:[] for i in user}
 
-#This step is a bit slow            
+#This step is a bit slow. Might not be a good way to iterate            
 for i in range(int(N*split_ratio)):
     user_loc[data_train.ix[i]['userid']].append(data_train.ix[i]['geohashed_end_loc'])
 
